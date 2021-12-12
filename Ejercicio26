@@ -1,0 +1,38 @@
+
+#include <iostream>
+
+using namespace std;
+
+/* Ejercicio 26. Escriba un programa que pida tres números e imprima el tipo de triangulo (isósceles, equilátero, escaleno) que se formaría, si
+ * sus lados tienen la longitud denida por los números ingresados. Tenga en cuenta el caso en que los números ingresados no forman un triángulo.
+    Ej: si se ingresan 3, 3 y 5 se debe imprimir:
+    Se forma un triangulo isosceles.
+    y si se ingresan 3, 3 y 6 se debe imprimir:
+    Las longitudes ingresadas no forman un triangulo.
+*/
+
+int main()
+{
+    double A;
+    double C;
+    double D;
+
+cout<<"Dame un numero: ";
+cin>>A;
+cout<<"Dame otro numero: ";
+cin>>C;
+cout<<"Otro, otro: ";
+cin>>D;
+
+//Comprovemos si pueden formar un triángulo
+//En cualquier triángulo, la suma de dos de sus lados siempre es mayor que el tercer lado.
+if(A>=(C+D) || C>=(A+D) || D>=(A+C))
+    cout<<"Las longitudes ingresadas no forman un triangulo."<<endl<<endl;
+else if(A==C && A==D)
+        cout<<"Se forma un triangulo equilatero"<<endl<<endl;
+else if(A==C || A==D || C==D)
+        cout<<"Se forma un triangulo isoceles"<<endl<<endl;
+else
+        cout<<"Se forma un triangulo escaleno"<<endl<<endl;
+return 0;
+}
