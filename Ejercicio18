@@ -1,0 +1,34 @@
+
+#include <iostream>
+
+using namespace std;
+
+/* Ejercicio 18. Escriba un programa que pida un número N e imprima si es o no un cuadrado perfecto.
+
+    Ej: si se ingresa 9 se debe imprimir:
+    9 es un cuadrado perfecto.
+    y si se ingresa 8 se debe imprimir:
+    8 NO es un cuadrado perfecto.
+*/
+
+int main()
+{
+    int N, k, i;
+
+    cout<<"Dame un numero: ";
+    cin>>N;
+
+    k=0;
+
+    for( i=1 ; i<=N ; i++){
+        if (i*i==N)
+            k=1;
+    }
+
+    if (k==1)
+        cout<< N << " es un cuadrado perfecto."<<endl;
+    else
+        cout<< N << " NO es un cuadrado perfecto."<<endl;
+
+    return 0;
+}
