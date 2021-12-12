@@ -1,0 +1,31 @@
+
+#include <iostream>
+
+using namespace std;
+
+/* Ejercicio 16. Escriba un programa que pida constantemente números hasta que se ingrese el número cero e imprima en pantalla el promedio de los
+ * números ingresados (excluyendo el cero).
+
+    Ej: si se ingresan 1, 2, 3, 0 se debe imprimir:
+    El promedio es: 2
+*/
+
+int main()
+{
+    int i=0;
+    int N=0;
+    double C=0;
+
+    do {
+        C=C+N;
+        i++;
+        cout<<"Dame numeros: ";
+        cin>>N;
+    }
+    while(N!=0);
+
+    C=C/(i-1);                      //i+1 porque incluímos el del 0
+
+    cout<<"El promedio es: "<< C <<endl;
+    return 0;
+}
