@@ -1,0 +1,33 @@
+
+#include <iostream>
+
+using namespace std;
+
+/* Ejercicio 24. Escriba un programa que pida una número entero e imprima un cuadrado de dicho tamaño, los bordes del cuadrado deben estar hechos
+ * con el carácter `+' y el interior debe estar vacío.
+    Ej: si se ingresa 4 se debe imprimir:
+    ++++
+    +  +
+    +  +
+    ++++
+*/
+
+int main ()
+{
+    int A, i, j;
+
+   cout<<"Dame un numero entero: ";
+   cin>>A;
+
+   for(i=1; i<=A ; i++){
+       for(j=1; j<=A ; j++){
+
+           if(i==1 || i==A || j==1 || j==A)
+               cout<<'+';
+           else
+               cout<<' ';
+           }
+       cout<<endl;
+       }
+return 0;
+}
