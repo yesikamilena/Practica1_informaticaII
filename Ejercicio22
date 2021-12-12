@@ -1,0 +1,26 @@
+
+#include <iostream>
+
+using namespace std;
+
+/* Ejercicio 22. Escriba un programa que pida una cantidad entera de segundos y la imprima en formato horas:minutos:segundos.
+    Ej: si se ingresa 7777 se debe imprimir:
+    2:9:37
+*/
+
+int main()
+{
+    int A, B, N;
+
+    cout<<"Dame los segundos: ";
+    cin>>A;
+
+    cout<<A/3600<<':';          //horas=A/3600 en enteros por debajo. Así se expresan las horas en segundos.
+
+    B=(A-(A/3600)*3600)/60;    //Se calcula cuántos segundos quedas después de quitarle los segundos correspondiente a las horas con: A - horas en segundos(o sea las horas multiplicados por 3600),
+    cout<<B<<':';              //y los minutos B se calculan dividiendo esto por 60 que es lo correspondiente para expresarlo en segundos.
+
+    N= A-(A/3600)*3600-B*60;    // Los segundos serían lo sobrante. O sea A - las horas en segundos - Los minutos en segundos.
+    cout<< N<<endl<<endl;
+    return 0;
+}
