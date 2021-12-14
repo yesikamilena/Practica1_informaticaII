@@ -1,0 +1,40 @@
+
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
+
+/* Problema 1. Escriba un programa que identique si un carácter ingresado es una vocal, una consonante o ninguna de las 2 e imprima un mensaje
+ * según el caso.
+
+    Nota: el formato de salida debe ser:
+    no es una letra.
+    a es una vocal.
+    C es una consonante.
+*/
+
+int main(){
+
+    char Cchar, B;
+cout<<"Dame cualquier cosa: ";
+cin>>Cchar;
+
+B=Cchar;
+
+
+if(Cchar>=65 && Cchar<=90){
+    if(Cchar==65 || Cchar==65+4 || Cchar==65+8 || Cchar==65+14 || Cchar==65+20)
+        cout<<Cchar<<" es una vocal."<<endl;
+    else
+        cout<<Cchar<<" es una consonante."<<endl;
+}
+else if(Cchar>=97 && Cchar<=122){
+    if(Cchar==97 || Cchar==97+4 || Cchar==97+8 || Cchar==97+14 || Cchar==97+20)
+                cout<<Cchar<<" es una vocal."<<endl;
+            else
+                cout<<Cchar<<" es una consonante."<<endl;
+}
+else
+    cout<<"No es una letra."<<endl;
+return 0;
+}
