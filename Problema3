@@ -1,0 +1,46 @@
+
+#include <iostream>
+
+using namespace std;
+
+/* Problema 3. Escriba un programa que debe leer un mes y un día de dicho mes para luego decir si esa combinación de mes y día son válidos. El
+ * caso más especial es el 29 de febrero, en dicho caso imprimir posiblemente año bisiesto.
+    Nota: el formato de salida debe ser:
+    14 es un mes invalido.
+    31/4 es una fecha invalida.
+    27/4 es una fecha valida.
+    29/2 es valida en bisiesto.
+*/
+int main(){
+    int A, B;
+cout<<"Dame el numero de un mes: ";
+cin>>A;
+
+cout<<"Dame un dia: ";
+cin>>B;
+
+if(A<=0 || A>=13){
+    cout<<A<<" es un mes invalido."<<endl;
+}
+else if(A==2){
+    if(B>=1 && B<=28)
+        cout<<B<<'/'<<A<<" es una fecha valida."<<endl;
+    else if(B==29)
+        cout<<B<<'/'<<A<<" es valida en bisiesto."<<endl;
+    else
+        cout<<B<<'/'<<A<<" es una fecha invalida."<<endl;
+}
+else if(A==1 || A==3 || A==5 || A==7 || A==8 || A==10 || A==12){
+    if(B>=1 && B<=31)
+        cout<<B<<'/'<<A<<" es una fecha valida."<<endl;
+    else
+        cout<<B<<'/'<<A<<" es una fecha invalida."<<endl;
+}
+else{
+    if(B>=1 && B<=30)
+          cout<<B<<'/'<<A<<" es una fecha valida."<<endl;
+      else
+          cout<<B<<'/'<<A<<" es una fecha invalida."<<endl;
+}
+return 0;
+}
