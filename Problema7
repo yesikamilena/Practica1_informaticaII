@@ -1,0 +1,32 @@
+
+#include <iostream>
+
+using namespace std;
+
+/* Problema 7. Escriba un programa que pida un número entero N e imprima el resultado de la suma de todos sus dígitos elevados a sí mismos.
+    Ej: si se ingresa 1223 el resultado sería 1**1 + 2**2 + 2**2 + 3**3 = 36
+    Nota: la salida del programa debe ser: El resultado de la suma es: 36.
+*/
+
+int main(){
+    int N, A, B, suma, i;
+
+    cout<<"Ingrese un numero: ";
+    cin>>N;
+
+    suma=0;
+
+    while (N>0) {
+        A=N%10;
+        B=1;
+
+        for(i=1; i<=A ; i++){
+            B=B*A;
+        }
+        suma=suma+B;
+        N=N/10;
+    }
+    cout<<"El resultado de la suma es: "<<suma<<endl;
+
+    return 0;
+}
