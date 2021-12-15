@@ -1,0 +1,63 @@
+
+#include <iostream>
+
+using namespace std;
+
+/* Problema 6. Escriba un programa que reciba 3 números a, b, c, y calcule la suma de todos los múltiplos de a y b que sean menores a c. Tenga en
+  * cuenta no sumar 2 veces los múltiplos comunes.
+     Ej: para a=3, b=5 y c=10. Se sumarían 3+6+9+5=23
+     Para a=5, b=7 y c=36. Se sumarían 5+10+15+20+25+30+35+7+14+21+28 = 210.
+     Nota: el formato de salida debe ser:
+     m11 + m12 + m13 + . . . + m21 + m22 + m23. . . = sumatoria.
+     m11 representa el primer múltiplo de a y así sucesivamente. m21 representa el primer múltiplo de b y así sucesivamente.
+ */
+
+int main(){
+    int A, B, C, E, N, F, suma, i, j;
+
+ cout<<"Dame un numero: ";
+ cin>> A;
+ cout<<"Dame otro numero: ";
+ cin>> B;
+ cout<<"Dame otro numero: ";
+ cin>> C;
+
+ E=0;
+ F=B;
+
+ if(B<A){   //Hacemos que A sea la menor
+    i=A;
+    A=B;
+    B=i;
+ }
+
+ N=A;
+
+ cout<<N;
+ suma=N;
+
+ for(i=2; A*i<C; i++){
+     N=A*i;
+     cout<<"+"<<N;
+     suma=suma+N;
+ }
+
+ for(i=1; B*i<C; i++){
+     F=B*i;
+     for(j=1; A*j<C; j++){
+         N=A*j;
+         if(N==F){
+             E=1;
+         }
+     }
+     if(E==0){
+         cout<<"+"<<F;
+         suma=suma+F;
+     }
+     E=0;
+ }
+
+ cout<<"="<<suma<<endl;
+
+return 0;
+}
