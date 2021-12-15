@@ -1,0 +1,42 @@
+
+#include <iostream>
+
+using namespace std;
+
+/* Problema 8. Escriba un programa que reciba un número n e imprima el enésimo número primo.
+    Ej: Si recibe 4 el programa debe imprimir 7.
+    Nota: la salida del programa debe ser: El primo numero 4 es: 7.
+*/
+
+int main(){
+    bool k;
+    int A, N, i, j;
+
+    A=2;                //A me contará en qué primo voy.
+    k=0;                //Bandera que me dice si un numero sí es primo. Cambia a 1 cuando i%j==0.
+
+    cout<<"Dame un numero: ";
+    cin>>N;
+
+    i=3;
+
+    while(A<=N){          //i irá cambiando de valor para mirar si este es primo o no. Quiero que cuando A=N se salga del ciclo, por eso la condición de A<N sin el igual;
+
+            for(j=2; j<i; j++) {        //j será el módulo que se le aplica a i para saber si es primo o no. Para encontrar los numeros primos, no se dividen por ellos mismos, por eso j<i y no j<=i
+                if((i%j)==0){
+                    k=1;
+                }
+
+            }
+
+            if(k==0){
+                A++;                    // B será el que cuente en qué número primo va.
+            }
+            k=0;
+            i++;
+        }
+        cout<<"El primo numero "<<N<<" es: "<<i-1<<endl;
+
+    return 0;
+}
+
