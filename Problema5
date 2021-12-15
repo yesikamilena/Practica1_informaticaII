@@ -1,0 +1,37 @@
+
+#include <iostream>
+
+using namespace std;
+
+/* Problema 5. En la serie de Fibonacci, cada número es la suma de los 2 anteriores e inicia con 1 y 1. Ej: 1, 1, 2, 3, 5, 8, ....
+    Escriba un programa que reciba un número n y halle la suma de todos los números pares en la serie de Fibonacci menores a n.
+    Ej: si se ingresa 10, sería la suma de 2+8 =10
+    Nota: el formato de salida debe ser: El resultado de la suma es: 10
+*/
+
+int main(){
+    int N, suma, A, B, C;
+
+cout<<"Dame un numero: ";
+cin>>N;
+
+suma=0;
+A=1;        //A es el primer valor al inicio. (2 casillas atrás).
+B=1;      //A es el segundo valor al inicio. (una casilla atrás).
+
+C=A+B;     //Suma es igual al tercer valor al inicio.
+
+//Hagamos la serie de fibonacci
+
+while(C<N){
+    if(C%2==0){
+        suma=suma+C;
+    }
+    A=B;
+    B=C;
+    C=A+B;
+}
+cout<<"El resultado de la suma es: "<<suma<<endl;
+
+return 0;
+}
