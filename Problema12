@@ -1,0 +1,36 @@
+
+#include <iostream>
+
+using namespace std;
+
+/* Problema 12. Un número palíndromo es igual de derecha a izquierda y de izquierda a derecha,
+    Ej: 969. escriba un programa que calcule el número palíndromo más grande que se puede obtener como una multiplicación de números de 3 dígitos.
+    Ej: una de las posibles respuestas es: 143*777=111111.
+    Nota: la salida del programa debe ser: 143*777=111111
+*/
+
+int main(){
+    int A, B, Amayor, Bmayor, C, mayor;
+
+    mayor=0;
+    C=0;
+    Amayor=0;
+    Bmayor=0;
+
+    for(A=100; A<=999; A++){
+        if(A/100==A%10){
+            for(B=100; B<=999; B++){
+                if(A/100==B%10){
+                    C=A*B;
+                }
+                if(C>mayor){
+                    mayor=C;
+                    Amayor=A;
+                    Bmayor=B;
+                }
+            }
+        }
+    }
+    cout<<Amayor<<'*'<<Bmayor<<'='<<mayor<<endl;
+    return 0;
+}
