@@ -1,0 +1,38 @@
+
+#include <iostream>
+
+using namespace std;
+
+/* Problema 11. Escriba un programa que reciba un número y calcule la suma de todos los primos menores que el número ingresado.
+    Ej: Si se recibe 10 el programa debe imprimir 17.
+    Nota: la salida del programa debe ser: El resultado de la suma es: 17.
+*/
+
+int main(){
+    bool k;
+    int N, suma, i, j;
+
+    cout<<"Dame un numero: ";
+    cin>>N;
+
+    suma=0;
+
+    if(N<=2){       //Si es menor o igual a 2, entonces la suma es 0. Recordar que el 2 no se toma porque dice que primos menores que el numero ingresado.
+    }
+    else{
+        for(i=2; i<N; i++){
+            k=1;
+            for(j=2; j<i-1; j++){
+                if(i%j==0){
+                    k=0;                       //No es un número primo
+                }
+            }
+            if(k==1){
+                suma=suma+i;
+            }
+        }
+    }
+
+    cout<<"El resultado de la suma es: "<<suma<<endl;
+    return 0;
+}
