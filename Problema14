@@ -1,0 +1,53 @@
+
+#include <iostream>
+
+using namespace std;
+
+/* Problema 14. La serie de Collatz se conforma con la siguiente regla: sea n un elemento de la serie, si n es par, el siguiente elemento es n/2,
+ * y si n es impar, el siguiente elemento es 3n+1. Escriba un programa que reciba un número k y calcule cual es el elemento inicial j (semilla),
+ * menor que k, que produce la serie más larga y diga cuantos términos m tiene la serie.
+    Tip: la serie termina al llegar a un elemento cuyo valor sea 1.
+    Ej: para la semilla 13: 13, 40, 20, 10, 5, 16, 8, 4, 2, 1
+    Nota: la salida del programa debe ser:
+    La serie mas larga es con la semilla: j, teniendo m terminos.
+    Otra nota: se le dará una bonicación si imprime la serie.
+*/
+
+int main(){
+    int k, A, B=0, m=0, j=1, i;
+    cout<<"Dame un numero: ";
+    cin>>k;
+
+    for(i=2; i<k; i++){
+        A=i;
+        B=1;            //para contar el término de 1.
+        while(A!=1){
+            if(A%2==0){
+                A=A/2;
+                B++;
+            }
+            else{
+                A=3*A+1;
+                B++;
+            }
+        }
+        if(B>m){
+            j=i;        //F será la semilla más grande
+            m=B;        //m serán los términos
+        }
+    }
+    cout<<"La serie mas larga es con la semilla: "<<j<<" teniendo "<<m<<" terminos."<<endl;
+    cout <<"La serie es: ";
+    cout<<j;
+    while(j!=1){
+        if(j%2==0){
+            j=j/2;
+        }
+        else{
+            j=3*j+1;
+        }
+        cout<<' '<<j;
+    }
+    cout<<endl<<endl;
+    return 0;
+}
