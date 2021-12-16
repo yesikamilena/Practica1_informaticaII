@@ -1,0 +1,43 @@
+
+#include <iostream>
+
+using namespace std;
+
+/* Problema 9. Escriba un programa que reciba un número y calcule el mínimo común múltiplo de todos los números enteros entre 1 y el número
+ * ingresado.
+    Ej: Si se recibe 4 el programa debe imprimir 12.
+    Nota: la salida del programa debe ser: El minimo comun multiplo es: 12.
+*/
+
+int main(){
+    bool k;
+    int N, F, G, A, i, j;
+
+    cout<<"Dame un numero: ";
+    cin>>N;
+
+    A=0;
+    k=0;
+    F=1;
+    G=0;
+
+    if(N==2){
+        A=2;
+    }
+
+    i=1;
+    while(k==0){
+        k=1;
+        A=N*i;
+        for(j=1; j<=N-1 ;j++){
+            if(A%j!=0){
+                k=0;
+            }
+        }
+        i++;
+    }
+
+    cout<<"El minimo comun multiplo es: "<<A<<endl;
+
+    return 0;
+}
